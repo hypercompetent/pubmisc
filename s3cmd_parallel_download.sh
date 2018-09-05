@@ -31,7 +31,7 @@ else
 fi
 
 echo "Retrieving manifest for ${source_directory}"
-s3cmd ls ${source_directory} > temp_s3_manifest.txt
+s3cmd ls --requester-pays ${source_directory} > temp_s3_manifest.txt
 
 echo "Downloading ${source_ext} files from ${source_directory}"
 cat temp_s3_manifest.txt | \
